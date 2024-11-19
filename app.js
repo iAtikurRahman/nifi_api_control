@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const axios = require('axios');
 const qs = require('qs');
@@ -6,7 +7,7 @@ const app = express();
 const PORT = 3000;
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
-const NIFI_URL = 'https://localhost:8443/nifi-api';
+const NIFI_URL = process.env.NIFI_URL_API;
 const PROCESSOR_ID = '3eb9a91c-0193-1000-adf5-f7f56cabbc21';
 
 const agent = new https.Agent({
